@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width = device-width, initial-scale=1.0">
     <title>RockPaperScissor</title>
+    <link rel="stylesheet" href="rockPaperScissor.css">
+    <script src="rockPaperScissor.js" defer></script>
+   
 </head>
 <body>
-
-    <script src="rockpaperscissor.js"></script>
+<div id="bodyDiv">
+    <div class="pageTitle"><h1 id="pageTitleHeader" style="margin: 0px;">Welcome to the game of Rock Paper Scissor</h1></div>
+   <div class="headerDiv">
+        <div class="headerTitle"><p>Player please choose:</p></div>
+        <div class="headerSubDiv userAddOn"><img class="rock userAddOn" src="./Images/Rock.png"></div>
+        <div class="headerSubDiv userAddOn"><img class="paper userAddOn" src="./Images/Paper.png"></div>
+        <div class="headerSubDiv userAddOn"><img class="Scissor userAddOn" src="./Images/Scissor.png"></div>
+   </div>
+   
+   <div class="computerSection">
+        <div class="headerDiv" id="createdToSetMaxWidth">
+            <div class="headerTitle"><p>Computer's choice:</p></div>
+            <div class=" computerAddOn"><img id="computerImg" src="./Images/gifmaker_me.gif" alt="Computer's Selection"></div>
+        </div>
+        <div class="headerDiv">
+            <h1 id="roundWinner"></h1>
+        </div>
+    </div>
+</div>
+<div id="alternativeBodyDiv" style="display: none;">
+    <div id="finalSubmission">
+        <h1></h1>
+        <div class="scoreDiv">
+            <h2 id="computerScore">Computer: </h2>
+            <h2 id="userScore">Player: </h2>
+        </div>
+    </div>
+    <div>
+        <button id="playAgain">Reset Game!</button>
+    </div>
+ </div>
 </body>
 </html>
