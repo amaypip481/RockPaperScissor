@@ -15,7 +15,6 @@ function addClass(e){
 }
 
 function removeClass(e){
-    console.log(e);
     e.firstElementChild.classList.remove("zoomIn");
 }
 
