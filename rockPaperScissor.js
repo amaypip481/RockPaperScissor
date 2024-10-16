@@ -9,7 +9,7 @@ function addClass(e){
     getConsumerImage.forEach(removeEventFunction);
     e.target.classList.add("zoomIn");
     let userClick = e.target.classList[0];
-    let computerImg = document.querySelector("#computerImg");
+    let computerImg = document.querySelector(".computerImg");
     computerImg.src = "./Images/Gif_fast.gif"; // computer animation depicting computer is trying to choose
     setTimeout(() => {playRound(userClick, getComputerChoice())}, TIMEOUT_TIMER);//timeout to show animation and calling the playRound fucntion
 }
@@ -32,16 +32,18 @@ getConsumerImage.forEach(addEventFunction);
 
 //Add Play again & Submit final result button
 function addPlayAgainButton(){
-    let computerSectionDiv = document.querySelector(".computerSection");
+    let computerSectionDiv = document.querySelector(".onCallBuildWinnerDeclaration");
     let createDivForButtons = document.createElement("div");
     createDivForButtons.className = "divForButtons";
     computerSectionDiv.appendChild(createDivForButtons);
     let playAgainButton = document.createElement("button");
     playAgainButton.textContent = "Play Again";
+    playAgainButton.style.backgroundColor = `rgb(${207}, ${158}, ${93})`;
     playAgainButton.addEventListener("click",resetRound);
     createDivForButtons.appendChild(playAgainButton);
     let submitButton = document.createElement("button");
-    submitButton.textContent = "Submit";
+    submitButton.textContent = "Finish";
+    submitButton.style.backgroundColor = `rgb(${207}, ${158}, ${93})`;
     submitButton.addEventListener("click", userSubmitted);
     createDivForButtons.appendChild(submitButton);
     CREATEBUTTONSONCE = true;
@@ -51,13 +53,13 @@ function addPlayAgainButton(){
 function resetRound(){
     let headerElement = document.querySelector("#roundWinner");
     headerElement.innerText = "";
-    let computerSectionDiv = document.querySelector(".computerSection");
+    let computerSectionDiv = document.querySelector(".onCallBuildWinnerDeclaration");
     let createDivForButtons = document.querySelector(".divForButtons");
     computerSectionDiv.removeChild(createDivForButtons);
     let getConsumerImage = document.querySelectorAll(".headerSubDiv");
     getConsumerImage.forEach(addEventFunction);
     getConsumerImage.forEach(removeClass);
-    let computerImg = document.querySelector("#computerImg");
+    let computerImg = document.querySelector(".computerImg");
     computerImg.src = "./Images/gifmaker_me.gif";
 }
 
@@ -103,16 +105,16 @@ function playRound(humanChoice, computerChoice) {
             {
                 let headerElement = document.querySelector("#roundWinner");
                 headerElement.innerText = "Tie! Play Again";
-                document.querySelector("#computerImg").src = "./Images/Rock.png";
+                document.querySelector(".computerImg").src = "./Images/Rock.png";
             }
         else if (computerChoice === "paper") {
-            document.querySelector("#computerImg").src = "./Images/Paper.png";
+            document.querySelector(".computerImg").src = "./Images/Paper.png";
             let headerElement = document.querySelector("#roundWinner");
             headerElement.innerText = "Computer wins! Computer chose Paper";
             computerWinCount++;
         }
         else {
-            document.querySelector("#computerImg").src = "./Images/Scissor.png";
+            document.querySelector(".computerImg").src = "./Images/Scissor.png";
             let headerElement = document.querySelector("#roundWinner");
             headerElement.innerText = "You Win! Computer chose Scissor";
             userWinCount++;
@@ -120,18 +122,18 @@ function playRound(humanChoice, computerChoice) {
     }
     else if(humanChoice.toLowerCase() === "paper"){
         if (computerChoice === "paper") {
-            document.querySelector("#computerImg").src = "./Images/Paper.png";
+            document.querySelector(".computerImg").src = "./Images/Paper.png";
             let headerElement = document.querySelector("#roundWinner");
             headerElement.innerText = "Tie! Play Again";
         }
         else if (computerChoice === "scissor") {
-            document.querySelector("#computerImg").src = "./Images/Scissor.png";
+            document.querySelector(".computerImg").src = "./Images/Scissor.png";
             let headerElement = document.querySelector("#roundWinner");
             headerElement.innerText = "Computer wins!Computer chose Scissor";
             computerWinCount++;
         }
         else {
-            document.querySelector("#computerImg").src = "./Images/Rock.png";
+            document.querySelector(".computerImg").src = "./Images/Rock.png";
             let headerElement = document.querySelector("#roundWinner");
             headerElement.innerText = "You Win!Computer chose Rock";
             userWinCount++;
@@ -140,18 +142,18 @@ function playRound(humanChoice, computerChoice) {
 
     else {
         if (computerChoice === "scissor")  {
-            document.querySelector("#computerImg").src = "./Images/Scissor.png";
+            document.querySelector(".computerImg").src = "./Images/Scissor.png";
             let headerElement = document.querySelector("#roundWinner");
             headerElement.innerText = "Tie! Play Again";
         }
         else if (computerChoice === "rock") {
-            document.querySelector("#computerImg").src = "./Images/Rock.png";
+            document.querySelector(".computerImg").src = "./Images/Rock.png";
             let headerElement = document.querySelector("#roundWinner");
             headerElement.innerText = "Computer wins!Computer chose Rock";
             computerWinCount++;
         }
         else {
-            document.querySelector("#computerImg").src = "./Images/Paper.png";
+            document.querySelector(".computerImg").src = "./Images/Paper.png";
             let headerElement = document.querySelector("#roundWinner");
             headerElement.innerText = "You Win! Computer chose Paper";
             userWinCount++;
